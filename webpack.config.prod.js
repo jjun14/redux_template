@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    path.join(__dirname, './app/index.js')
+    path.join(__dirname, './src/index.js')
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -31,7 +31,7 @@ module.exports = {
     {
       test: /\.js$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'app')
+      include: path.join(__dirname, 'src')
     }
     // // CSS
     // { 
