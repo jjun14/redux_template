@@ -9,8 +9,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'static/bundle.js',
-    publicPath: '/static/'
+    filename: '/static/bundle.js'
   },
   resolve: {
     root: path.join(__dirname, 'src'),
@@ -19,8 +18,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       path: "dist",
-      inject: "body",
-      filename: "index.html"
+      inject: false,
+      template: "./src/index.html"
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
