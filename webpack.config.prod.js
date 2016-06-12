@@ -9,11 +9,19 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'static/bundle.js',
     publicPath: '/static/'
   },
+  resolve: {
+    root: path.join(__dirname, 'src'),
+    extensions: ['', '.js', '.jsx', '.json']
+  },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      path: "dist",
+      inject: "body",
+      filename: "index.html"
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
